@@ -17,7 +17,9 @@ params.exome="";
 if(params.exome){
   model=file("s3://deepvariant-data/models/exome");
 }
-
+else{
+  model=file("${params.modelFolder}");
+}
 
 /*--------------------------------------------------
   Using the BED file, for Exome Sequencing
