@@ -53,7 +53,8 @@ numberShardsMinusOne=params.j-1;
 
 ---------------------------------------------------*/
 
-params.h38="";
+params.h38="true";
+params.hg19="";
 params.test="";
 
 params.fasta="nofasta";
@@ -62,7 +63,14 @@ params.fastagz="nofastagz";
 params.gzfai="nogzfai";
 params.gzi="nogzi";
 
-if(params.test){
+if(!("nofasta").equals(params.fasta)){
+  fasta=file(params.fasta)
+  fai=file(params.fai);
+  fastagz=file(params.fastagz);
+  gzfai=file(params.gzfai);
+  gzi=file(params.gzi);
+}
+else if(params.test){
   fasta=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta");
   fai=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta.fai");
   fastagz=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta.gz");
@@ -75,6 +83,13 @@ else if(params.h38 ){
   fastagz=file("s3://deepvariant-data/genomes/h38/GRCh38.p10.genome.fa.gz");
   gzfai=file("s3://deepvariant-data/genomes/h38/GRCh38.p10.genome.fa.gz.fai");
   gzi=file("s3://deepvariant-data/genomes/h38/GRCh38.p10.genome.fa.gz.gzi");
+}
+else if(params.hg19 ){
+  fasta=file("s3://deepvariant-data/genomes/hg19/hg19.fa");
+  fai=file("s3://deepvariant-data/genomes/hg19/hg19.fa.fai");
+  fastagz=file("s3://deepvariant-data/genomes/hg19/hg19.fa.gz");
+  gzfai=file("s3://deepvariant-data/genomes/hg19/hg19.fa.gz.fai");
+  gzi=file("s3://deepvariant-data/genomes/hg19/hg19.fa.gz.gzi");
 }
 else{
   System.out.println(" --fasta \"/path/to/your/genome\"  params is required and was not found! ");
