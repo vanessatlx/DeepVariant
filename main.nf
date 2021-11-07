@@ -64,11 +64,11 @@ params.gzfai="nogzfai";
 params.gzi="nogzi";
 
 if(params.test){
-  fasta=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta");
-  fai=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta.fai");
-  fastagz=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta.gz");
-  gzfai=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta.gz.fai");
-  gzi=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta.gz.gzi");
+  fasta=file("$baseDir/testdata/chr17.fa");
+  fai=file("$baseDir/testdata/chr17.fa.fai");
+  fastagz=file("$baseDir/testdata/chr17.fa.gz");
+  gzfai=file("$baseDir/testdata/chr17.fa.gz.fai");
+  gzi=file("$baseDir/testdata/chr17.fa.gz.gzi");
 }
 else if(params.h38 ){
   fasta=file("s3://deepvariant-data/genomes/h38/GRCh38.p10.genome.fa");
