@@ -63,14 +63,7 @@ params.fastagz="nofastagz";
 params.gzfai="nogzfai";
 params.gzi="nogzi";
 
-if(!("nofasta").equals(params.fasta)){
-  fasta=file(params.fasta)
-  fai=file(params.fai);
-  fastagz=file(params.fastagz);
-  gzfai=file(params.gzfai);
-  gzi=file(params.gzi);
-}
-else if(params.test){
+if(params.test){
   fasta=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta");
   fai=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta.fai");
   fastagz=file("$baseDir/testdata/ucsc.hg19.chr20.unittest.fasta.gz");
