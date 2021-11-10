@@ -43,7 +43,7 @@ A typical run on **whole genome data** looks like this:
 ```
 git clone https://github.com/vanessatlx/DeepVariant
 cd DeepVariant
-nextflow run main.nf --hg19 --bam_folder "s3://deepvariant-data/test-bam/"
+nextflow run main.nf --hg19 --bam_folder "data/test-bam/"
 ```
 The h38 version of the reference genome is used.
 Two vcf files are produced and can be found in the folder "RESULTS-DeepVariant"
